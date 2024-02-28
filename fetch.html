@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Fetch Example</title>
+<style>
+  .loading {
+    display: none;
+    color: blueviolet;
+    text-align: center;
+    margin-top: 20px 20px 20px 20px;
+    align-items: center;
+  }
+  .loadingIndicator{
+    color: greenyellow;
+    font-synthesis: style;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  button{
+    align-items: center;
+    text-decoration: wavy;
+    box-shadow: inset greenyellow;
+  }
+</style>
+</head>
+<body>
+
+<button onclick="fetchData()">Fetch Data</button>
+<div id="loadingIndicator" class="loading">
+  <img src="loading.gif" alt="Loading...">
+</div>
+<div id="dataDisplay"></div>
+
+<script>
+  function fetchData() {
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const dataDisplay = document.getElementById('dataDisplay');
+    
+    // Show loading indicator
+    loadingIndicator.style.display = 'block';
+
+    // Simulate fetching data from an API
+    setTimeout(() => {
+      const data = { message: 'This is the fetched data!' };
+      
+      // Hide loading indicator
+      loadingIndicator.style.display = 'none';
+
+      // Display the fetched data
+      dataDisplay.innerHTML = `<p>${data.message}</p>`;
+    }, 2000); // Simulating a delay of 2 seconds
+  }
+</script>
+
+</body>
+</html>
+
